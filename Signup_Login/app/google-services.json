@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1035006918663",
+    "project_id": "signuplogin-30b86",
+    "storage_bucket": "signuplogin-30b86.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035006918663:android:1d5494a7773ba959daaaa2",
+        "android_client_info": {
+          "package_name": "com.mehru.signup_login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgqahZv-WCkU07_1ldQ7u_TJXjlcnXId4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
