@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
         signUpRedirect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,9 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
-
     public Boolean confirmUsername(){
         String val = loginUsername.getText().toString();
         if (val.isEmpty()){
@@ -76,7 +73,6 @@ public class LoginActivity extends AppCompatActivity {
             return  true;
         }
     }
-
     public Boolean confirmUserPassword(){
         String val = loginPassword.getText().toString();
         if (val.isEmpty()){
@@ -87,7 +83,6 @@ public class LoginActivity extends AppCompatActivity {
             return true;
         }
     }
-
     public void checkUser(){
         String username = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
@@ -114,14 +109,10 @@ public class LoginActivity extends AppCompatActivity {
                     loginUsername.requestFocus();
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-
     }
-
-
 }

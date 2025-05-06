@@ -44,7 +44,6 @@ public class SignUpActivity extends AppCompatActivity {
         loginRedirectText = findViewById(R.id.loginRedirectText);
         signUpButton = findViewById(R.id.signup_button);
 
-
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,14 +55,11 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = signupPassword.getText().toString();
                 String username = signupUsername.getText().toString();
 
-
                 HelperClass helperClass = new HelperClass( name ,email,username ,password);
                 reference.child(username).setValue(helperClass);
                 Toast.makeText(SignUpActivity.this, "Signup Successfully ", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
                 startActivity(intent);
-
             }
         });
 
