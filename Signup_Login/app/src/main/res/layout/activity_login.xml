@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:id="@+id/signUpRedirectText"
-                android:text="New user ? SignUp here"
+                android:text="New user ? craete account "
                 android:layout_marginTop="10dp"/>
 
 
