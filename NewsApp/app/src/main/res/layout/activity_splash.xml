@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Let's Read News Together"
             android:textSize="25sp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             android:layout_marginTop="50dp"
             android:textColor="@color/white"
             android:fontFamily="serif"/>
@@ -49,9 +49,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Meharban Alam"
+        android:text="Meharban alam"
         android:layout_alignParentBottom="true"
-        android:textColor="#00050F"
+        android:textColor="#E61C1C"
         android:fontFamily="sans-serif-condensed"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
