@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:fitsSystemWindows="true"
     android:layout_margin="25dp"
     android:weightSum="100"
     tools:context=".LoginUserNameActivity">
