@@ -51,7 +51,7 @@ class MediaPlaybackService : Service() {
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Calmly")
             .setContentText("Playing relaxing sound")
-            .setSmallIcon(R.drawable.ic_music) // replace with your icon
+            .setSmallIcon(R.drawable.ic_music)
             .addAction(R.drawable.ic_pause, "Pause/Play", pausePending)
             .addAction(R.drawable.ic_stop, "Stop", stopPending)
             .setOngoing(true)
