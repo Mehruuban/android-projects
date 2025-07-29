@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <!-- Android 9+ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Android 14+ (recommended specific type) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <!-- Android 13+ (runtime permission required) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +23,12 @@
         android:theme="@style/Theme.Calmly"
         tools:targetApi="31">
 
-        <service android:name=".MediaPlaybackService" />
+        <service
+            android:name=".MediaPlaybackService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+
         <receiver android:name=".NotificationReceiver" />
 
         <activity

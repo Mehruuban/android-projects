@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.mehru.calmly.util.PlayController
 
 class SoundAdapter(
     private val context: Context,
@@ -28,34 +29,36 @@ class SoundAdapter(
         val sound = soundList[position]
         holder.title.text = sound.title
         holder.image.setImageResource(sound.imageResId)
-
         holder.playPause.setImageResource(
             if (sound.isPlaying) R.drawable.ic_pause else R.drawable.ic_play
         )
 
         holder.playPause.setOnClickListener {
-            if (sound.isPlaying) {
-                stopSound()
-                sound.isPlaying = false
-                notifyItemChanged(position)
-            } else {
-                stopSound()
-                mediaPlayer = MediaPlayer.create(context, sound.soundResId).apply {
-                    isLooping = true
-                    start()
+            if (!sound.isPlaying) {
+                // Start service with this sound
+                PlayController.start(context, sound.soundResId)
+
+                // Update UI states: only this one playing
+                val prev = currentlyPlayingPosition
+                if (prev != -1 && prev != position) {
+                    soundList[prev].isPlaying = false
+                    notifyItemChanged(prev)
                 }
                 sound.isPlaying = true
+                currentlyPlayingPosition = position
                 notifyItemChanged(position)
 
-                if (currentlyPlayingPosition != -1 && currentlyPlayingPosition != position) {
-                    soundList[currentlyPlayingPosition].isPlaying = false
-                    notifyItemChanged(currentlyPlayingPosition)
-                }
-
-                currentlyPlayingPosition = position
+            } else {
+                // Toggle pause/resume
+                PlayController.toggle(context)
+                // Update just the icon: we don't know final state immediately,
+                // but you can optimistically flip it:
+                sound.isPlaying = !sound.isPlaying
+                notifyItemChanged(position)
             }
         }
     }
+
 
     override fun getItemCount(): Int = soundList.size
 

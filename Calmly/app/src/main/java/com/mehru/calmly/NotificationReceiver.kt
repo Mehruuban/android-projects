@@ -6,7 +6,7 @@ import android.content.Intent
 
 class NotificationReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        when (intent?.action) {
+   /*     when (intent?.action) {
             "ACTION_PAUSE" -> {
                 val service = MediaPlaybackService()
                 service.togglePause()  // Note: for proper handling, you should use Messenger/Binding or singleton
@@ -15,6 +15,6 @@ class NotificationReceiver : BroadcastReceiver() {
                 val stopIntent = Intent(context, MediaPlaybackService::class.java)
                 context?.stopService(stopIntent)
             }
-        }
+        }*/
     }
 }
